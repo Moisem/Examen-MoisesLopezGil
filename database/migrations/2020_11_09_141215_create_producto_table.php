@@ -13,7 +13,7 @@ class CreateProductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('producto', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->increments('id',11);
             $table->string('nombre',45);
             $table->decimal('precio',6,2);

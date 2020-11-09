@@ -13,13 +13,13 @@ class CreateDetalleFacturaTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_factura', function (Blueprint $table) {
-            $table->increments('num_detalle');
-            $table->integer('numero_factura')->unsigned();;
-            $table->integer('producto_id')->unsigned();
+        Schema::create('detalle_facturas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('facturas_id')->unsigned();
+            $table->integer('productos_id')->unsigned();
             $table->integer('cantidad');
-            $table->foreign('numero_factura')->references('numero')->on('factura');
-            $table->foreign('producto_id')->references('id')->on('producto');
+            $table->foreign('facturas_id')->references('id')->on('facturas');
+            $table->foreign('productos_id')->references('id')->on('productos');
             $table->timestamps();
             $table->softDeletes();
         });

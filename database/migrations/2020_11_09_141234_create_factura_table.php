@@ -13,8 +13,8 @@ class CreateFacturaTable extends Migration
      */
     public function up()
     {
-        Schema::create('factura', function (Blueprint $table) {
-            $table->increments('numero',11);
+        Schema::create('facturas', function (Blueprint $table) {
+            $table->increments('id',11);
             $table->Date('fecha');
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes');
